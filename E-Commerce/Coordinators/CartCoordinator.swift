@@ -10,9 +10,9 @@ import Combine
 
 class CartCoordinator: BaseCoordinator {
     weak var parentCoordinator: BaseCoordinator?
-    internal var children: [BaseCoordinator] = []
-    internal weak var navigationController: UINavigationController!
-    internal weak var appContext: AppContext!
+    var children: [BaseCoordinator] = []
+    weak var navigationController: UINavigationController!
+    weak var appContext: AppContext!
     private var cancellables = Set<AnyCancellable>()
 
     private lazy var viewModel: CartViewModel = {

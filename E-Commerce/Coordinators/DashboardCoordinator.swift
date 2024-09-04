@@ -10,9 +10,9 @@ import Combine
 
 class DashboardCoordinator: BaseCoordinator {
     weak var parentCoordinator: BaseCoordinator?
-    internal var children: [BaseCoordinator] = []
-    internal var navigationController: UINavigationController!
-    internal var appContext: AppContext!
+    var children: [BaseCoordinator] = []
+    var navigationController: UINavigationController!
+    var appContext: AppContext!
     private var cancellables = Set<AnyCancellable>()
 
     private lazy var viewModel: DashboardViewModel = {
@@ -28,6 +28,11 @@ class DashboardCoordinator: BaseCoordinator {
     func start() {
         let dashboardViewController = DashboardViewController.instantiate()
         dashboardViewController.viewModel = viewModel
+        dashboardViewController.dismiss
+            .sink { [unowned self] in
+                self.parentCoordinator?.childDidFinish(self)
+            }
+            .store(in: &cancellables)
         navigationController?.pushViewController(dashboardViewController, animated: false)
         setupBindings()
     }

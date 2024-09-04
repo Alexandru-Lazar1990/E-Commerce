@@ -13,6 +13,8 @@ class DeinitableViewController: UIViewController, Storyboarded {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        dismiss.send()
+        if isMovingFromParent {
+            dismiss.send()
+        }
     }
 }

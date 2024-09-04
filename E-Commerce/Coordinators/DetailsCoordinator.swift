@@ -10,9 +10,9 @@ import Combine
 
 class DetailsCoordinator: BaseCoordinator {
     weak var parentCoordinator: BaseCoordinator?
-    internal var children: [BaseCoordinator] = []
-    internal weak var navigationController: UINavigationController!
-    internal weak var appContext: AppContext!
+    var children: [BaseCoordinator] = []
+    weak var navigationController: UINavigationController!
+    weak var appContext: AppContext!
     private var product: Product
     private var suggestions: [Product]
     private var cancellables = Set<AnyCancellable>()
@@ -58,7 +58,7 @@ class DetailsCoordinator: BaseCoordinator {
                                                         appContext: appContext,
                                                         product: product,
                                                         suggestions: [])
-        moreDetailsCoordinator.parentCoordinator = parentCoordinator
+        moreDetailsCoordinator.parentCoordinator = self
         children.append(moreDetailsCoordinator)
         moreDetailsCoordinator.start()
     }
