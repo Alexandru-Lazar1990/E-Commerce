@@ -114,19 +114,14 @@
 		A662D2C52C873FBA00473BB8 /* E-Commerce */ = {
 			isa = PBXGroup;
 			children = (
+				A6F131712C88810B009EE1D9 /* Resources */,
+				A6F131702C8880F8009EE1D9 /* Application */,
 				A662D2FF2C8760F900473BB8 /* Storyboard */,
 				A662D2F52C87527300473BB8 /* Helpers */,
 				A6F1315D2C883232009EE1D9 /* Coordinators */,
 				A662D2E42C87470300473BB8 /* Screens */,
 				A662D2DF2C87429D00473BB8 /* Models */,
 				A662D2DA2C8740E600473BB8 /* Services */,
-				A662D2C62C873FBA00473BB8 /* AppDelegate.swift */,
-				A662D2C82C873FBA00473BB8 /* SceneDelegate.swift */,
-				A6F1315B2C883154009EE1D9 /* AppContext.swift */,
-				A662D2CC2C873FBB00473BB8 /* Main.storyboard */,
-				A662D2CF2C873FBC00473BB8 /* Assets.xcassets */,
-				A662D2D12C873FBC00473BB8 /* LaunchScreen.storyboard */,
-				A662D2D42C873FBC00473BB8 /* Info.plist */,
 			);
 			path = "E-Commerce";
 			sourceTree = "<group>";
@@ -304,6 +299,27 @@
 				A6F131662C8836EC009EE1D9 /* DetailsCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A6F131702C8880F8009EE1D9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A662D2C62C873FBA00473BB8 /* AppDelegate.swift */,
+				A662D2C82C873FBA00473BB8 /* SceneDelegate.swift */,
+				A6F1315B2C883154009EE1D9 /* AppContext.swift */,
+				A662D2CC2C873FBB00473BB8 /* Main.storyboard */,
+				A662D2D12C873FBC00473BB8 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A6F131712C88810B009EE1D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A662D2CF2C873FBC00473BB8 /* Assets.xcassets */,
+				A662D2D42C873FBC00473BB8 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -543,6 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -561,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "E-Commerce/Info.plist";
+				INFOPLIST_FILE = "E-Commerce/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -587,7 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "E-Commerce/Info.plist";
+				INFOPLIST_FILE = "E-Commerce/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

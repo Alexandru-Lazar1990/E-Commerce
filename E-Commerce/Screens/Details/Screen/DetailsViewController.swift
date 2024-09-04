@@ -51,7 +51,7 @@ class DetailsViewController: DeinitableViewController {
         priceLabel.text = viewModel.productPrice
         descriptionLabel.text = viewModel.productDescription
         ratingLabel.text = viewModel.productRating
-        let barItem = UIBarButtonItem(image: UIImage(named: "add"), style: .plain, target: self, action: #selector(addToCart))
+        let barItem = UIBarButtonItem(image: UIImage(named: "addIcon"), style: .plain, target: self, action: #selector(addToCart))
         navigationItem.rightBarButtonItem = barItem
     }
 

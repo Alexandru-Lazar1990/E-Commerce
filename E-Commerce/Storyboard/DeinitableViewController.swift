@@ -8,12 +8,9 @@
 import UIKit
 import Combine
 
-protocol Deinitable: AnyObject {
-    func didDeinit()
-}
-
 class DeinitableViewController: UIViewController, Storyboarded {
     let dismiss = PassthroughSubject<Void, Never>()
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         dismiss.send()
