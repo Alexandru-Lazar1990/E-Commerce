@@ -31,14 +31,17 @@ class DetailsViewController: DeinitableViewController {
         DetailsCollectionViewCell.register(to: collectionView)
         collectionView.delegate = self
         let section: NSCollectionLayoutSection = {
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                  heightDimension: .fractionalHeight(1))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), 
+                                                  heightDimension: .absolute(collectionView.frame.height))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.7), heightDimension: .estimated(250))
+            item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8),
+                                                   heightDimension: .fractionalWidth(0.5))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                            subitems: [item])
+            group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
             let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .continuous
+            section.orthogonalScrollingBehavior = .groupPaging
             return section
         }()
         collectionView.setCollectionViewLayout(UICollectionViewCompositionalLayout(section: section), animated: true)

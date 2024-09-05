@@ -40,7 +40,7 @@ class DetailsViewModel {
     }
 
     var productRating: String {
-        "\(product.rating)"
+        "\(product.rating.rate)"
     }
 
     var hasSuggestions: Bool {

@@ -17,6 +17,7 @@ class DetailsCollectionViewCell: UICollectionViewCell {
             productImageView.loadImage(from: viewModel.productImageURL)
             titleLabel.text = viewModel.productTitle
             priceLabel.text = viewModel.productPrice
+            setupUI()
         }
     }
 
@@ -25,5 +26,11 @@ class DetailsCollectionViewCell: UICollectionViewCell {
         productImageView.image = nil
         titleLabel.text = nil
         priceLabel.text = nil
+    }
+
+    private func setupUI() {
+        contentView.layer.cornerRadius = 8
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.gray.cgColor
     }
 }
