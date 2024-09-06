@@ -48,6 +48,18 @@ class DashboardCoordinator: BaseCoordinator {
                 self.navigateToDetailsScreenWith(detailsItem)
             }
             .store(in: &cancellables)
+        viewModel.showError
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] error in
+                self.showErrorWith(error)
+            }
+            .store(in: &cancellables)
+    }
+
+    private func showErrorWith(_ errorString: String) {
+        let alert = UIAlertController(title: "Server Error", message: errorString, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        navigationController.present(alert, animated: true, completion: nil)
     }
 
     private func navigateToCartScreen() {

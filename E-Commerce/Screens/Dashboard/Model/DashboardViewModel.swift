@@ -16,6 +16,7 @@ class DashboardViewModel {
     let isLoading = CurrentValueSubject<Bool, Never>(true)
     let showCartScreen = PassthroughSubject<Void, Never>()
     let showDetailsScreen = PassthroughSubject<DetailsItem, Never>()
+    let showError = PassthroughSubject<String, Never>()
     var products: [Product] = []
 
     var screenTitle: String {
@@ -34,7 +35,7 @@ class DashboardViewModel {
             do {
                 self?.products = try await self?.productService.getProducts() ?? []
             } catch let error {
-                print(error)
+                self?.showError.send(error.localizedDescription)
             }
             self?.isLoading.send(false)
         }
